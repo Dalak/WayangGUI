@@ -30,7 +30,7 @@ AboutDialog::~AboutDialog()
 	delete m_ui;
 }
 
-void AboutDialog::on_buttonBox_accepted()
+void AboutDialog::on_m_OkButton_accepted()
 {
 	close();
 }
