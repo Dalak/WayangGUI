@@ -2,6 +2,7 @@
 // Copyright (c) 2014-2017 XDN developers
 // Copyright (c) 2016-2017 BXC developers
 // Copyright (c) 2017 Royalties developers
+// Copyright (c) 2017 Wayang developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -28,7 +29,7 @@ void LoggerAdapter::init() {
   Common::JsonValue& cfgLoggers = loggerConfiguration.insert("loggers", Common::JsonValue::ARRAY);
   Common::JsonValue& fileLogger = cfgLoggers.pushBack(Common::JsonValue::OBJECT);
   fileLogger.insert("type", "file");
-  fileLogger.insert("filename", Settings::instance().getDataDir().absoluteFilePath("Royaltieswallet.log").toStdString());
+  fileLogger.insert("filename", Settings::instance().getDataDir().absoluteFilePath("Wayangwallet.log").toStdString());
   fileLogger.insert("level", logLevel);
   m_logManager.configure(loggerConfiguration);
 }

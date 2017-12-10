@@ -2,6 +2,7 @@
 // Copyright (c) 2014-2017 XDN developers
 // Copyright (c) 2016-2017 BXC developers
 // Copyright (c) 2017 Royalties developers
+// Copyright (c) 2017 Wayang developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,7 +19,7 @@ namespace WalletGui {
 
 Q_DECL_CONSTEXPR char ALIAS_OBJECT_NAME[] = "cediname1";
 Q_DECL_CONSTEXPR char ALIAS_NAME_TAG[] = "name";
-Q_DECL_CONSTEXPR char ALIAS_ADDRESS_TAG[] = "BXC";
+Q_DECL_CONSTEXPR char ALIAS_ADDRESS_TAG[] = "WYA";
 
 AliasProvider::AliasProvider(QObject *parent) : QObject(parent), m_networkManager() {
 }

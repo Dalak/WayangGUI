@@ -2,6 +2,7 @@
 // Copyright (c) 2014-2017 XDN developers
 // Copyright (c) 2016-2017 BXC developers
 // Copyright (c) 2017 Royalties developers
+// Copyright (c) 2017 Wayang developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -29,7 +30,7 @@ using namespace WalletGui;
 
 int main(int argc, char* argv[]) {
   QApplication app(argc, argv);
-  app.setApplicationName("Royaltieswallet");
+  app.setApplicationName("Wayangwallet");
   app.setApplicationVersion(Settings::instance().getVersion());
   app.setQuitOnLastWindowClosed(false);
 
