@@ -15,9 +15,9 @@ set (CMAKE_PREFIX_PATH "C:\\Qt\\Qt5.6.0\\5.6\\msvc2013_64\\")
 include_directories(${CMAKE_BINARY_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}
     src
-    cryptonote/external
-    cryptonote/include
-    cryptonote/src)
+    WayangCli/external
+    WayangCli/include
+    WayangCli/src)
 
 find_package(Qt5Gui REQUIRED)
 find_package(Qt5Widgets REQUIRED)
@@ -39,7 +39,7 @@ include_directories(${Boost_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARY_DIRS})
 
 set(VERSION "")
-configure_file("cryptonote/src/version.h.in" "version.h")
+configure_file("WayangCli/src/version.h.in" "version.h")
 configure_file("src/CryptoNoteWalletConfig.h.in" "CryptoNoteWalletConfig.h")
 
 add_definitions(-DVERSION=\"${CN_VERSION}\")
@@ -48,131 +48,131 @@ add_definitions(-DGIT_REVISION=\"${GIT_REVISION}\")
 set(CMAKE_AUTOMOC ON)
 
 set(CRYPTONOTE_SOURCES
-  cryptonote/external/miniupnpc/connecthostport.c
-  cryptonote/external/miniupnpc/igd_desc_parse.c
-  cryptonote/external/miniupnpc/minisoap.c
-  cryptonote/external/miniupnpc/miniupnpc.c
-  cryptonote/external/miniupnpc/miniwget.c
-  cryptonote/external/miniupnpc/minixml.c
-  cryptonote/external/miniupnpc/portlistingparse.c
-  cryptonote/external/miniupnpc/receivedata.c
-  cryptonote/external/miniupnpc/upnpcommands.c
-  cryptonote/external/miniupnpc/upnpreplyparse.c
-  cryptonote/src/Common/Base58.cpp
-  cryptonote/src/Common/CommandLine.cpp
-  cryptonote/src/Common/Util.cpp
-  cryptonote/src/Common/StringTools.cpp
-  cryptonote/src/Common/JsonValue.cpp
-  cryptonote/src/Common/ConsoleTools.cpp
-  cryptonote/src/Common/MemoryInputStream.cpp
-  cryptonote/src/Common/PathTools.cpp
-  cryptonote/src/Common/StdInputStream.cpp
-  cryptonote/src/Common/StdOutputStream.cpp
-  cryptonote/src/Common/StreamTools.cpp
-  cryptonote/src/Common/StringOutputStream.cpp
-  cryptonote/src/Common/StringView.cpp
-  cryptonote/src/Common/VectorOutputStream.cpp
-  cryptonote/src/crypto/blake256.c
-  cryptonote/src/crypto/chacha.c
-  cryptonote/src/crypto/crypto-ops-data.c
-  cryptonote/src/crypto/crypto-ops.c
-  cryptonote/src/crypto/crypto.cpp
-  cryptonote/src/crypto/groestl.c
-  cryptonote/src/crypto/hash-extra-blake.c
-  cryptonote/src/crypto/hash-extra-groestl.c
-  cryptonote/src/crypto/hash-extra-jh.c
-  cryptonote/src/crypto/hash-extra-skein.c
-  cryptonote/src/crypto/hash.c
-  cryptonote/src/crypto/jh.c
-  cryptonote/src/crypto/keccak.c
-  cryptonote/src/crypto/oaes_lib.c
-  cryptonote/src/crypto/random.c
-  cryptonote/src/crypto/skein.c
-  cryptonote/src/crypto/slow-hash.c
-  cryptonote/src/crypto/slow-hash.cpp
-  cryptonote/src/crypto/tree-hash.c
-  cryptonote/src/CryptoNoteCore/BlockchainIndices.cpp
-  cryptonote/src/CryptoNoteCore/BlockchainMessages.cpp
-  cryptonote/src/CryptoNoteCore/BlockIndex.cpp
-  cryptonote/src/CryptoNoteCore/CoreConfig.cpp
-  cryptonote/src/CryptoNoteCore/CryptoNoteBasic.cpp
-  cryptonote/src/CryptoNoteCore/CryptoNoteTools.cpp
-  cryptonote/src/CryptoNoteCore/Currency.cpp
-  cryptonote/src/CryptoNoteCore/DepositIndex.cpp
-  cryptonote/src/CryptoNoteCore/MinerConfig.cpp
-  cryptonote/src/CryptoNoteCore/Transaction.cpp
-  cryptonote/src/CryptoNoteCore/Account.cpp
-  cryptonote/src/CryptoNoteCore/Blockchain.cpp
-  cryptonote/src/CryptoNoteCore/Checkpoints.cpp
-  cryptonote/src/CryptoNoteCore/CryptoNoteBasicImpl.cpp
-  cryptonote/src/CryptoNoteCore/Core.cpp
-  cryptonote/src/CryptoNoteCore/CryptoNoteFormatUtils.cpp
-  cryptonote/src/CryptoNoteCore/CryptoNoteSerialization.cpp
-  cryptonote/src/CryptoNoteCore/Difficulty.cpp
-  cryptonote/src/CryptoNoteCore/IBlock.cpp
-  cryptonote/src/CryptoNoteCore/Miner.cpp
-  cryptonote/src/CryptoNoteCore/TransactionExtra.cpp
-  cryptonote/src/CryptoNoteCore/TransactionPool.cpp
-  cryptonote/src/CryptoNoteCore/TransactionPrefixImpl.cpp
-  cryptonote/src/CryptoNoteCore/TransactionUtils.cpp
-  cryptonote/src/InProcessNode/InProcessNode.cpp
-  cryptonote/src/InProcessNode/InProcessNodeErrors.cpp
-  cryptonote/src/NodeRpcProxy/NodeErrors.cpp
-  cryptonote/src/NodeRpcProxy/NodeRpcProxy.cpp
-  cryptonote/src/P2p/NetNodeConfig.cpp
-  cryptonote/src/Serialization/BinaryInputStreamSerializer.cpp
-  cryptonote/src/Serialization/BinaryOutputStreamSerializer.cpp
-  cryptonote/src/Serialization/JsonInputValueSerializer.cpp
-  cryptonote/src/Serialization/JsonOutputStreamSerializer.cpp
-  cryptonote/src/Serialization/KVBinaryInputStreamSerializer.cpp
-  cryptonote/src/Serialization/KVBinaryOutputStreamSerializer.cpp
-  cryptonote/src/Serialization/SerializationOverloads.cpp
-  cryptonote/src/Transfers/BlockchainSynchronizer.cpp
-  cryptonote/src/Transfers/SynchronizationState.cpp
-  cryptonote/src/Transfers/TransfersConsumer.cpp
-  cryptonote/src/Transfers/TransfersContainer.cpp
-  cryptonote/src/Transfers/TransfersSubscription.cpp
-  cryptonote/src/Transfers/TransfersSynchronizer.cpp
-  cryptonote/src/Wallet/LegacyKeysImporter.cpp
-  cryptonote/src/Wallet/WalletAsyncContextCounter.cpp
-  cryptonote/src/Wallet/WalletErrors.cpp
-  cryptonote/src/WalletLegacy/KeysStorage.cpp
-  cryptonote/src/WalletLegacy/WalletLegacy.cpp
-  cryptonote/src/WalletLegacy/WalletHelper.cpp
-  cryptonote/src/WalletLegacy/WalletLegacySerializer.cpp
-  cryptonote/src/WalletLegacy/WalletLegacySerialization.cpp
-  cryptonote/src/WalletLegacy/WalletTransactionSender.cpp
-  cryptonote/src/WalletLegacy/WalletUnconfirmedTransactions.cpp
-  cryptonote/src/WalletLegacy/WalletUserTransactionsCache.cpp
-  cryptonote/src/System/ContextGroup.cpp
-  cryptonote/src/System/Event.cpp
-  cryptonote/src/System/EventLock.cpp
-  cryptonote/src/System/InterruptedException.cpp
-  cryptonote/src/System/Ipv4Address.cpp
-  cryptonote/src/System/TcpStream.cpp
-  cryptonote/src/HTTP/HttpRequest.cpp
-  cryptonote/src/HTTP/HttpParser.cpp
-  cryptonote/src/HTTP/HttpParserErrorCodes.cpp
-  cryptonote/src/HTTP/HttpResponse.cpp
-  cryptonote/src/Rpc/HttpClient.cpp
-  cryptonote/src/Rpc/JsonRpc.cpp
-  cryptonote/src/P2p/NetNode.cpp
-  cryptonote/src/P2p/LevinProtocol.cpp
-  cryptonote/src/P2p/NetNodeConfig.cpp
-  cryptonote/src/P2p/PeerListManager.cpp
-  cryptonote/src/CryptoNoteProtocol/CryptoNoteProtocolHandler.cpp
-  cryptonote/src/Logging/ILogger.cpp
-  cryptonote/src/Logging/LoggerGroup.cpp
-  cryptonote/src/Logging/CommonLogger.cpp
-  cryptonote/src/Logging/LoggerManager.cpp
-  cryptonote/src/Logging/FileLogger.cpp
-  cryptonote/src/Logging/StreamLogger.cpp
-  cryptonote/src/Logging/ConsoleLogger.cpp
-  cryptonote/src/Logging/LoggerMessage.cpp
-  cryptonote/src/Logging/LoggerRef.cpp
-  cryptonote/src/BlockchainExplorer/BlockchainExplorer.cpp
-  cryptonote/src/BlockchainExplorer/BlockchainExplorerDataBuilder.cpp
-  cryptonote/src/BlockchainExplorer/BlockchainExplorerErrors.cpp
+  WayangCli/external/miniupnpc/connecthostport.c
+  WayangCli/external/miniupnpc/igd_desc_parse.c
+  WayangCli/external/miniupnpc/minisoap.c
+  WayangCli/external/miniupnpc/miniupnpc.c
+  WayangCli/external/miniupnpc/miniwget.c
+  WayangCli/external/miniupnpc/minixml.c
+  WayangCli/external/miniupnpc/portlistingparse.c
+  WayangCli/external/miniupnpc/receivedata.c
+  WayangCli/external/miniupnpc/upnpcommands.c
+  WayangCli/external/miniupnpc/upnpreplyparse.c
+  WayangCli/src/Common/Base58.cpp
+  WayangCli/src/Common/CommandLine.cpp
+  WayangCli/src/Common/Util.cpp
+  WayangCli/src/Common/StringTools.cpp
+  WayangCli/src/Common/JsonValue.cpp
+  WayangCli/src/Common/ConsoleTools.cpp
+  WayangCli/src/Common/MemoryInputStream.cpp
+  WayangCli/src/Common/PathTools.cpp
+  WayangCli/src/Common/StdInputStream.cpp
+  WayangCli/src/Common/StdOutputStream.cpp
+  WayangCli/src/Common/StreamTools.cpp
+  WayangCli/src/Common/StringOutputStream.cpp
+  WayangCli/src/Common/StringView.cpp
+  WayangCli/src/Common/VectorOutputStream.cpp
+  WayangCli/src/crypto/blake256.c
+  WayangCli/src/crypto/chacha.c
+  WayangCli/src/crypto/crypto-ops-data.c
+  WayangCli/src/crypto/crypto-ops.c
+  WayangCli/src/crypto/crypto.cpp
+  WayangCli/src/crypto/groestl.c
+  WayangCli/src/crypto/hash-extra-blake.c
+  WayangCli/src/crypto/hash-extra-groestl.c
+  WayangCli/src/crypto/hash-extra-jh.c
+  WayangCli/src/crypto/hash-extra-skein.c
+  WayangCli/src/crypto/hash.c
+  WayangCli/src/crypto/jh.c
+  WayangCli/src/crypto/keccak.c
+  WayangCli/src/crypto/oaes_lib.c
+  WayangCli/src/crypto/random.c
+  WayangCli/src/crypto/skein.c
+  WayangCli/src/crypto/slow-hash.c
+  WayangCli/src/crypto/slow-hash.cpp
+  WayangCli/src/crypto/tree-hash.c
+  WayangCli/src/CryptoNoteCore/BlockchainIndices.cpp
+  WayangCli/src/CryptoNoteCore/BlockchainMessages.cpp
+  WayangCli/src/CryptoNoteCore/BlockIndex.cpp
+  WayangCli/src/CryptoNoteCore/CoreConfig.cpp
+  WayangCli/src/CryptoNoteCore/CryptoNoteBasic.cpp
+  WayangCli/src/CryptoNoteCore/CryptoNoteTools.cpp
+  WayangCli/src/CryptoNoteCore/Currency.cpp
+  WayangCli/src/CryptoNoteCore/DepositIndex.cpp
+  WayangCli/src/CryptoNoteCore/MinerConfig.cpp
+  WayangCli/src/CryptoNoteCore/Transaction.cpp
+  WayangCli/src/CryptoNoteCore/Account.cpp
+  WayangCli/src/CryptoNoteCore/Blockchain.cpp
+  WayangCli/src/CryptoNoteCore/Checkpoints.cpp
+  WayangCli/src/CryptoNoteCore/CryptoNoteBasicImpl.cpp
+  WayangCli/src/CryptoNoteCore/Core.cpp
+  WayangCli/src/CryptoNoteCore/CryptoNoteFormatUtils.cpp
+  WayangCli/src/CryptoNoteCore/CryptoNoteSerialization.cpp
+  WayangCli/src/CryptoNoteCore/Difficulty.cpp
+  WayangCli/src/CryptoNoteCore/IBlock.cpp
+  WayangCli/src/CryptoNoteCore/Miner.cpp
+  WayangCli/src/CryptoNoteCore/TransactionExtra.cpp
+  WayangCli/src/CryptoNoteCore/TransactionPool.cpp
+  WayangCli/src/CryptoNoteCore/TransactionPrefixImpl.cpp
+  WayangCli/src/CryptoNoteCore/TransactionUtils.cpp
+  WayangCli/src/InProcessNode/InProcessNode.cpp
+  WayangCli/src/InProcessNode/InProcessNodeErrors.cpp
+  WayangCli/src/NodeRpcProxy/NodeErrors.cpp
+  WayangCli/src/NodeRpcProxy/NodeRpcProxy.cpp
+  WayangCli/src/P2p/NetNodeConfig.cpp
+  WayangCli/src/Serialization/BinaryInputStreamSerializer.cpp
+  WayangCli/src/Serialization/BinaryOutputStreamSerializer.cpp
+  WayangCli/src/Serialization/JsonInputValueSerializer.cpp
+  WayangCli/src/Serialization/JsonOutputStreamSerializer.cpp
+  WayangCli/src/Serialization/KVBinaryInputStreamSerializer.cpp
+  WayangCli/src/Serialization/KVBinaryOutputStreamSerializer.cpp
+  WayangCli/src/Serialization/SerializationOverloads.cpp
+  WayangCli/src/Transfers/BlockchainSynchronizer.cpp
+  WayangCli/src/Transfers/SynchronizationState.cpp
+  WayangCli/src/Transfers/TransfersConsumer.cpp
+  WayangCli/src/Transfers/TransfersContainer.cpp
+  WayangCli/src/Transfers/TransfersSubscription.cpp
+  WayangCli/src/Transfers/TransfersSynchronizer.cpp
+  WayangCli/src/Wallet/LegacyKeysImporter.cpp
+  WayangCli/src/Wallet/WalletAsyncContextCounter.cpp
+  WayangCli/src/Wallet/WalletErrors.cpp
+  WayangCli/src/WalletLegacy/KeysStorage.cpp
+  WayangCli/src/WalletLegacy/WalletLegacy.cpp
+  WayangCli/src/WalletLegacy/WalletHelper.cpp
+  WayangCli/src/WalletLegacy/WalletLegacySerializer.cpp
+  WayangCli/src/WalletLegacy/WalletLegacySerialization.cpp
+  WayangCli/src/WalletLegacy/WalletTransactionSender.cpp
+  WayangCli/src/WalletLegacy/WalletUnconfirmedTransactions.cpp
+  WayangCli/src/WalletLegacy/WalletUserTransactionsCache.cpp
+  WayangCli/src/System/ContextGroup.cpp
+  WayangCli/src/System/Event.cpp
+  WayangCli/src/System/EventLock.cpp
+  WayangCli/src/System/InterruptedException.cpp
+  WayangCli/src/System/Ipv4Address.cpp
+  WayangCli/src/System/TcpStream.cpp
+  WayangCli/src/HTTP/HttpRequest.cpp
+  WayangCli/src/HTTP/HttpParser.cpp
+  WayangCli/src/HTTP/HttpParserErrorCodes.cpp
+  WayangCli/src/HTTP/HttpResponse.cpp
+  WayangCli/src/Rpc/HttpClient.cpp
+  WayangCli/src/Rpc/JsonRpc.cpp
+  WayangCli/src/P2p/NetNode.cpp
+  WayangCli/src/P2p/LevinProtocol.cpp
+  WayangCli/src/P2p/NetNodeConfig.cpp
+  WayangCli/src/P2p/PeerListManager.cpp
+  WayangCli/src/CryptoNoteProtocol/CryptoNoteProtocolHandler.cpp
+  WayangCli/src/Logging/ILogger.cpp
+  WayangCli/src/Logging/LoggerGroup.cpp
+  WayangCli/src/Logging/CommonLogger.cpp
+  WayangCli/src/Logging/LoggerManager.cpp
+  WayangCli/src/Logging/FileLogger.cpp
+  WayangCli/src/Logging/StreamLogger.cpp
+  WayangCli/src/Logging/ConsoleLogger.cpp
+  WayangCli/src/Logging/LoggerMessage.cpp
+  WayangCli/src/Logging/LoggerRef.cpp
+  WayangCli/src/BlockchainExplorer/BlockchainExplorer.cpp
+  WayangCli/src/BlockchainExplorer/BlockchainExplorerDataBuilder.cpp
+  WayangCli/src/BlockchainExplorer/BlockchainExplorerErrors.cpp
 )
 
 file(GLOB_RECURSE SOURCES src/*.cpp)
@@ -190,7 +190,7 @@ if (WIN32)
 	message(FATAL_ERROR "Only MSVC is supported on this platform")
   endif ()
   add_definitions(/D_CRT_SECURE_NO_WARNINGS /D_WIN32_WINNT=0x0600 /DSTATICLIB)
-  include_directories(cryptonote/src/platform/msc)
+  include_directories(WayangCli/src/platform/msc)
 
   set(PLATFORM_DIR Windows)
   set(BUILD_PLATFORM WIN32)
@@ -204,9 +204,9 @@ elseif (UNIX)
     file(GLOB_RECURSE OBJC_SOURCES src/*.mm)
     set(SOURCES ${SOURCES} ${OBJC_SOURCES})
     set(PLATFORM_DIR OSX)
-    set(MACOSX_BUNDLE_INFO_STRING "Cryptonote GUI wallet")
+    set(MACOSX_BUNDLE_INFO_STRING "Wayang GUI wallet")
     set(MACOSX_BUNDLE_LONG_VERSION_STRING "${VERSION_VERSION}.${VERSION_MINOR}.${VERSION_PATCH}")
-    set(MACOSX_BUNDLE_BUNDLE_NAME CryptonoteWallet)
+    set(MACOSX_BUNDLE_BUNDLE_NAME WayangWallet)
     set(MACOSX_BUNDLE_SHORT_VERSION_STRING "${VERSION_VERSION}.${VERSION_MINOR}.${VERSION_PATCH}")
     set(MACOSX_BUNDLE_BUNDLE_VERSION "$${VERSION_VERSION}.${VERSION_MINOR}.${VERSION_PATCH}")
 
@@ -234,8 +234,8 @@ elseif (UNIX)
   endif (APPLE)
 endif ()
 
-include_directories(cryptonote/src/Platform/${PLATFORM_DIR})
-file(GLOB PLATFORM_SOURCES cryptonote/src/Platform/${PLATFORM_DIR}/System/*)
+include_directories(WayangCli/src/Platform/${PLATFORM_DIR})
+file(GLOB PLATFORM_SOURCES WayangCli/src/Platform/${PLATFORM_DIR}/System/*)
 set(CRYPTONOTE_SOURCES ${CRYPTONOTE_SOURCES} ${PLATFORM_SOURCES})
 
 add_library(${CRYPTONOTE_LIB} STATIC ${CRYPTONOTE_SOURCES})
@@ -260,8 +260,8 @@ qt5_use_modules(${PROJECT_NAME} Widgets Gui Network)
 
 set(CPACK_PACKAGE_NAME ${CN_PROJECT_NAME})
 set(CPACK_PACKAGE_VERSION ${CN_VERSION})
-set(CPACK_PACKAGE_VENDOR "Royalties Foundation")
-set(CPACK_PACKAGE_CONTACT "https://xry.io/")
+set(CPACK_PACKAGE_VENDOR "Wayang Foundation")
+set(CPACK_PACKAGE_CONTACT "https://nur1labs.net/")
 set(CPACK_STRIP_FILES ON)
 if (APPLE)
     set(CPACK_GENERATOR DragNDrop)
@@ -284,14 +284,14 @@ elseif (UNIX)
         set(CPACK_DEBIAN_PACKAGE_MAINTAINER "${CPACK_PACKAGE_VENDOR} <xrydev@gmail.com>")
         set(CPACK_DEBIAN_PACKAGE_SECTION Office)
         set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
-        set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Royalties XRY wallet
- Royalties is a decentrilized privacy protected peer-to-peer
- cryptocurrency and untraceable encrypted messaging system. Royalties is
- open-source; its design is public, nobody owns or controls Royalties and
- everyone can take part.
+        set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Wayang WYG wallet
+ Wayang is a decentrilized privacy protected peer-to-peer
+ cryptocurrency and untraceable encrypted messaging system. Wayang is
+ open-source; its design is public, nobody owns or controls Wayang and
+ everyone can take part. Wayang is Smart, Fast And Easy Used.
  .
  Features of the Royalties wallet listed bellow:
- * Classic Bitcoin alike appearance in CryptoNote based cryptocurrency,
+ * Classic Bitcoin alike appearance in WayangCli based cryptocurrency,
    made with QT and open-source.
  * Instant anonymous XRY transfers and transfers notifications
  * Instant untraceable encrypted messages transfers and notifications
@@ -299,7 +299,8 @@ elseif (UNIX)
    syncronization.
  * Wallet encryption
  * Fast and hardware optimized
- * Open and easy. Private keys can be exported into other clients.")
+ * Open and easy. Private keys can be exported into other clients
+ * Decreasing overload ico.")
 set(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}-${VERSION_RELEASE}.${CPACK_SYSTEM_NAME}")
 	else ()
         set(CPACK_GENERATOR RPM)
@@ -316,7 +317,7 @@ set(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}-${CPACK_PACKAGE_VERSIO
  everyone can take part.
 
  Features of the Royalties wallet listed bellow:
- *Classic Bitcoin alike appearance in CryptoNote based cryptocurrency,
+ *Classic Bitcoin alike appearance in WayangCli based cryptocurrency,
     made with QT and open-source.
  *Instant anonymous Royalties transfers and transfers notifications
  *Instant untraceable encrypted messages transfers and notifications
@@ -324,7 +325,8 @@ set(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}-${CPACK_PACKAGE_VERSIO
     syncronization.
  *Wallet encryption
  *Fast and hardware optimized
- *Open and easy. Private keys can be exported into other clients.")
+ *Open and easy. Private keys can be exported into other clients
+ *Decreasing overload ico.")
 set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}-${VERSION_RELEASE}.${CPACK_SYSTEM_NAME}")
     endif ()
 elseif (WIN32)
