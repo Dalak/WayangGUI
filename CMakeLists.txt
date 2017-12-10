@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-include(CryptoNoteWallet.cmake)
+include(WayangWallet.cmake)
 include(QREncode.cmake)
 
 project(${CN_PROJECT_NAME})
@@ -194,7 +194,7 @@ if (WIN32)
 
   set(PLATFORM_DIR Windows)
   set(BUILD_PLATFORM WIN32)
-  set(BUILD_RESOURCES src/cryptonotewallet.rc)
+  set(BUILD_RESOURCES src/wayangwallet.rc)
   set(QTMAIN Qt5::WinMain)
 
 elseif (UNIX)
