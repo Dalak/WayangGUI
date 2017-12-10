@@ -70,9 +70,9 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="m_closeButton">
+      <widget class="QPushButton" name="m_OkButton">
        <property name="text">
-        <string>Close</string>
+        <string>Ok</string>
        </property>
       </widget>
      </item>
@@ -83,7 +83,7 @@
  <resources/>
  <connections>
   <connection>
-   <sender>m_closeButton</sender>
+   <sender>m_OkButton</sender>
    <signal>clicked()</signal>
    <receiver>AboutDialog</receiver>
    <slot>accept()</slot>
