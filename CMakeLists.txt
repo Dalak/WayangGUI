@@ -269,9 +269,9 @@ if (APPLE)
     set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}.-${VERSION_RELEASE}")
 elseif (UNIX)
     install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
-    install(FILES src/royaltieswallet.desktop DESTINATION share/applications)
-    install(FILES src/images/cryptonote.png DESTINATION share/pixmaps RENAME royalties.png)
-    install(FILES copyright DESTINATION share/doc/royaltieswallet)
+    install(FILES src/wayangwallet.desktop.desktop DESTINATION share/applications)
+    install(FILES src/images/cryptonote.png DESTINATION share/pixmaps RENAME wayang.png)
+    install(FILES copyright DESTINATION share/doc/wayangwallet)
 
 	SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
 	SET(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
@@ -281,21 +281,21 @@ elseif (UNIX)
         set(CPACK_GENERATOR DEB)
         set(CPACK_DEBIAN_PACKAGE_NAME ${CPACK_PACKAGE_NAME})
         set(CPACK_SYSTEM_NAME amd64)
-        set(CPACK_DEBIAN_PACKAGE_MAINTAINER "${CPACK_PACKAGE_VENDOR} <xrydev@gmail.com>")
+        set(CPACK_DEBIAN_PACKAGE_MAINTAINER "${CPACK_PACKAGE_VENDOR} <crbru.yuthafiga@gmail.com>")
         set(CPACK_DEBIAN_PACKAGE_SECTION Office)
         set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
-        set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Wayang WYG wallet
+        set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Wayang WYA wallet
  Wayang is a decentrilized privacy protected peer-to-peer
  cryptocurrency and untraceable encrypted messaging system. Wayang is
  open-source; its design is public, nobody owns or controls Wayang and
  everyone can take part. Wayang is Smart, Fast And Easy Used.
  .
- Features of the Royalties wallet listed bellow:
+ Features of the Wayang wallet listed bellow:
  * Classic Bitcoin alike appearance in WayangCli based cryptocurrency,
    made with QT and open-source.
- * Instant anonymous XRY transfers and transfers notifications
+ * Instant anonymous WYA transfers and transfers notifications
  * Instant untraceable encrypted messages transfers and notifications
- * Safe and secure, full Royalties network node in wallet, fast network
+ * Safe and secure, full Wayang network node in wallet, fast network
    syncronization.
  * Wallet encryption
  * Fast and hardware optimized
@@ -309,19 +309,19 @@ set(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}-${CPACK_PACKAGE_VERSIO
         set(CPACK_RPM_PACKAGE_LICENSE "GPL3")
         set(CPACK_RPM_PACKAGE_GROUP Office)
         set(CPACK_RPM_PACKAGE_REQUIRES "qt5-qtbase >= 5.3.2, qt5-qtbase-gui >= 5.3.2")
-        set(CPACK_RPM_PACKAGE_SUMMARY "Royalties wallet")
-        set(CPACK_RPM_PACKAGE_DESCRIPTION "Open-source Royalties GUI wallet
- Royalties is a decentrilized privacy protected peer-to-peer
- cryptocurrency and untraceable encrypted messaging system. Royalties is
- open-source; its design is public, nobody owns or controls Royalties and
- everyone can take part.
+        set(CPACK_RPM_PACKAGE_SUMMARY "Wayang wallet")
+        set(CPACK_RPM_PACKAGE_DESCRIPTION "Open-source Wayang GUI wallet
+ Wayang is a decentrilized privacy protected peer-to-peer
+ cryptocurrency and untraceable encrypted messaging system. Wayang is
+ open-source; its design is public, nobody owns or controls Wayang and
+ everyone can take part. Wayang is Smart, Realible And Faster
 
- Features of the Royalties wallet listed bellow:
+ Features of the Wayang wallet listed bellow:
  *Classic Bitcoin alike appearance in WayangCli based cryptocurrency,
     made with QT and open-source.
- *Instant anonymous Royalties transfers and transfers notifications
+ *Instant anonymous WYA transfers and transfers notifications
  *Instant untraceable encrypted messages transfers and notifications
- *Safe and secure, full Royalties network node in wallet, fast network
+ *Safe and secure, full Wayang network node in wallet, fast network
     syncronization.
  *Wallet encryption
  *Fast and hardware optimized

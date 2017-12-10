@@ -1,5 +1,5 @@
 
 set(CN_PROJECT_NAME "wayangwallet")
 set(CN_CURRENCY_DISPLAY_NAME "Wayang")
-set(CN_CURRENCY_TICKER "WYG")
+set(CN_CURRENCY_TICKER "WYA")
 set(CN_VERSION 0.1.0)
