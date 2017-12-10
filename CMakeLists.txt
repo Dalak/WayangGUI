@@ -198,7 +198,7 @@ if (WIN32)
   set(QTMAIN Qt5::WinMain)
 
 elseif (UNIX)
-  set(CRYPTONOTE_SOURCES ${CRYPTONOTE_SOURCES} cryptonote/external/miniupnpc/minissdpc.c)
+  set(CRYPTONOTE_SOURCES ${CRYPTONOTE_SOURCES} WayangCli/external/miniupnpc/minissdpc.c)
   if (APPLE)
     enable_language(ASM)
     file(GLOB_RECURSE OBJC_SOURCES src/*.mm)
