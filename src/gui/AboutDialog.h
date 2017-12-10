@@ -6,6 +6,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#ifndef ABOUTDIALOG_H
+#define ABOUTDIALOG_H
 #pragma once
 
 #include <QDialog>
@@ -16,16 +18,23 @@ class AboutDialog;
 
 namespace WalletGui {
 
-class AboutDialog : public QDialog {
-  Q_OBJECT
-  Q_DISABLE_COPY(AboutDialog)
+/** "About" dialog box */
+class AboutDialog : public QDialog
+{
+    Q_OBJECT
+    Q_DISABLE_COPY(AboutDialog)
 
 public:
-  AboutDialog(QWidget* _parent);
-  ~AboutDialog();
+    explicit AboutDialog(QWidget *parent = 0);
+    ~AboutDialog();
 
 private:
-  QScopedPointer<Ui::AboutDialog> m_ui;
+    Ui::AboutDialog *m_ui;
+
+private slots:
+    void on_m_OkButton_accepted();
 };
 
 }
+
+#endif // ABOUTDIALOG_H
