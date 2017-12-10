@@ -1,0 +1,3 @@
+[submodule "WayangCli"]
+	path = WayangCli
+	url = https://github.com/FndNur1Labs/WayangCli.git
