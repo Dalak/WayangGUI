@@ -177,10 +177,10 @@
     <property name="title">
      <string>Additional</string>
     </property>
-    <addaction name="actionExchange"/>
-    <addaction name="actionShareholder"/>
+    <addaction name="m_addexchange"/>
+    <addaction name="m_sharehold"/>
     <addaction name="separator"/>
-    <addaction name="actionBlock_Explorer"/>
+    <addaction name="m_blockexp"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuAdditional"/>
