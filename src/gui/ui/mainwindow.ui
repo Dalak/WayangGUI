@@ -444,17 +444,17 @@
     <string>Reset wallet</string>
    </property>
   </action>
-  <action name="actionExchange">
+  <action name="m_addexchange">
    <property name="text">
     <string>Exchange</string>
    </property>
   </action>
-  <action name="actionShareholder">
+  <action name="m_sharehold">
    <property name="text">
     <string>Shareholder</string>
    </property>
   </action>
-  <action name="actionBlock_Explorer">
+  <action name="m_blockexp">
    <property name="text">
     <string>Block Explorer</string>
    </property>
