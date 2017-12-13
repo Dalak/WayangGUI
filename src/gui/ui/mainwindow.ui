@@ -177,9 +177,16 @@
     <property name="title">
      <string>Additional</string>
     </property>
+    <widget class="QMenu" name="menuBlock_Feature">
+     <property name="title">
+      <string>Block Feature</string>
+     </property>
+     <addaction name="m_Block_Explorer"/>
+     <addaction name="m_Reward_Calculator"/>
+    </widget>
     <addaction name="m_exchange"/>
     <addaction name="separator"/>
-    <addaction name="m_Block_Explorer"/>
+    <addaction name="menuBlock_Feature"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuAdditional"/>
@@ -451,6 +458,11 @@
   <action name="m_Block_Explorer">
    <property name="text">
     <string>Block Explorer</string>
+   </property>
+  </action>
+  <action name="m_Reward_Calculator">
+   <property name="text">
+    <string>Reward Calculator</string>
    </property>
   </action>
  </widget>
@@ -868,6 +880,22 @@
   </connection>
   <connection>
    <sender>m_Block_Explorer</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>aboutQt()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>506</x>
+     <y>301</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_Reward_Calculator</sender>
    <signal>triggered()</signal>
    <receiver>MainWindow</receiver>
    <slot>aboutQt()</slot>
