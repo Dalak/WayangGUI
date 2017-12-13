@@ -40,16 +40,7 @@
     <property name="spacing">
      <number>0</number>
     </property>
-    <property name="leftMargin">
-     <number>0</number>
-    </property>
-    <property name="topMargin">
-     <number>0</number>
-    </property>
-    <property name="rightMargin">
-     <number>0</number>
-    </property>
-    <property name="bottomMargin">
+    <property name="margin">
      <number>0</number>
     </property>
     <item>
@@ -182,7 +173,17 @@
     <addaction name="m_aboutCryptonoteAction"/>
     <addaction name="m_aboutQtAction"/>
    </widget>
+   <widget class="QMenu" name="menuAdditional">
+    <property name="title">
+     <string>Additional</string>
+    </property>
+    <addaction name="actionExchange"/>
+    <addaction name="actionShareholder"/>
+    <addaction name="separator"/>
+    <addaction name="actionBlock_Explorer"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuAdditional"/>
    <addaction name="menuSettings"/>
    <addaction name="menuHelp"/>
   </widget>
@@ -441,6 +442,21 @@
    </property>
    <property name="toolTip">
     <string>Reset wallet</string>
+   </property>
+  </action>
+  <action name="actionExchange">
+   <property name="text">
+    <string>Exchange</string>
+   </property>
+  </action>
+  <action name="actionShareholder">
+   <property name="text">
+    <string>Shareholder</string>
+   </property>
+  </action>
+  <action name="actionBlock_Explorer">
+   <property name="text">
+    <string>Block Explorer</string>
    </property>
   </action>
  </widget>
