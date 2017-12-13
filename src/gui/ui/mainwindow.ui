@@ -855,4 +855,3 @@
   <slot>resetWallet()</slot>
  </slots>
 </ui>
-
