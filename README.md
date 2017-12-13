@@ -1,2 +1,6 @@
 # WayangGUI
-dung dung tak tak tak dung......wayang lewat...gatot koco mau lewat!
+The last cryptonote with technology pos and ico
+
+read doc folder how to:
+
+basical installation : https://cryptonotestarter.org/inner.html

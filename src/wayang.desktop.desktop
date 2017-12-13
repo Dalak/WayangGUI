@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Wayang
+Comment=Wayang
+Exec=wayang
+Terminal=false
+Type=Application
+Icon=wayang
+MimeType=x-scheme-handler/wayang;
+Categories=Office;Finance;
+Name[en_US]=wayang.desktop

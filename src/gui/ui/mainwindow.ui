@@ -40,16 +40,7 @@
     <property name="spacing">
      <number>0</number>
     </property>
-    <property name="leftMargin">
-     <number>0</number>
-    </property>
-    <property name="topMargin">
-     <number>0</number>
-    </property>
-    <property name="rightMargin">
-     <number>0</number>
-    </property>
-    <property name="bottomMargin">
+    <property name="margin">
      <number>0</number>
     </property>
     <item>
@@ -150,7 +141,7 @@
      <x>0</x>
      <y>0</y>
      <width>1014</width>
-     <height>22</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -182,7 +173,16 @@
     <addaction name="m_aboutCryptonoteAction"/>
     <addaction name="m_aboutQtAction"/>
    </widget>
+   <widget class="QMenu" name="menuAdditional">
+    <property name="title">
+     <string>Additional</string>
+    </property>
+    <addaction name="m_exchange"/>
+    <addaction name="separator"/>
+    <addaction name="m_Block_Explorer"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuAdditional"/>
    <addaction name="menuSettings"/>
    <addaction name="menuHelp"/>
   </widget>
@@ -441,6 +441,16 @@
    </property>
    <property name="toolTip">
     <string>Reset wallet</string>
+   </property>
+  </action>
+  <action name="m_exchange">
+   <property name="text">
+    <string>Exchange</string>
+   </property>
+  </action>
+  <action name="m_Block_Explorer">
+   <property name="text">
+    <string>Block Explorer</string>
    </property>
   </action>
  </widget>
@@ -829,6 +839,38 @@
    <signal>triggered()</signal>
    <receiver>MainWindow</receiver>
    <slot>resetWallet()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>506</x>
+     <y>301</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_exchange</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>aboutQt()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>506</x>
+     <y>301</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_Block_Explorer</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>aboutQt()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
