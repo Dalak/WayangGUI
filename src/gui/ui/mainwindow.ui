@@ -40,7 +40,16 @@
     <property name="spacing">
      <number>0</number>
     </property>
-    <property name="margin">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
      <number>0</number>
     </property>
     <item>
@@ -173,17 +182,7 @@
     <addaction name="m_aboutCryptonoteAction"/>
     <addaction name="m_aboutQtAction"/>
    </widget>
-   <widget class="QMenu" name="menuAdditional">
-    <property name="title">
-     <string>Additional</string>
-    </property>
-    <addaction name="m_addexchange"/>
-    <addaction name="m_sharehold"/>
-    <addaction name="separator"/>
-    <addaction name="m_blockexp"/>
-   </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuAdditional"/>
    <addaction name="menuSettings"/>
    <addaction name="menuHelp"/>
   </widget>
@@ -442,21 +441,6 @@
    </property>
    <property name="toolTip">
     <string>Reset wallet</string>
-   </property>
-  </action>
-  <action name="m_addexchange">
-   <property name="text">
-    <string>Exchange</string>
-   </property>
-  </action>
-  <action name="m_sharehold">
-   <property name="text">
-    <string>Shareholder</string>
-   </property>
-  </action>
-  <action name="m_blockexp">
-   <property name="text">
-    <string>Block Explorer</string>
    </property>
   </action>
  </widget>
@@ -856,54 +840,6 @@
     </hint>
    </hints>
   </connection>
-  <connection>
-   <sender>m_addexchange</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>aboutQt()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>506</x>
-     <y>301</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_sharehold</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>aboutQt()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>506</x>
-     <y>301</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_blockexp</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>aboutQt()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>506</x>
-     <y>301</y>
-    </hint>
-   </hints>
-  </connection>
  </connections>
  <slots>
   <slot>createWallet()</slot>
@@ -919,3 +855,4 @@
   <slot>resetWallet()</slot>
  </slots>
 </ui>
+
