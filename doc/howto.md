@@ -1,8 +1,8 @@
-This copyright for everyone here~
+#This copyright for everyone here~
 
 For who wanna contribute on cryptonote will best
 
-Debian
+##Debian
 --------------------------------------------
 -open terminal
 -try this command
